@@ -11,3 +11,13 @@ class Address(db.Model):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'first_name':self.first_name,
+            'last_name':self.last_name,
+            'phone':self.phone,
+            'address':self.address,
+            'date_created':self.date_created
+        }
